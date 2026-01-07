@@ -72,8 +72,11 @@ const Signup = () => {
       history.push("/chats");
     } catch (error) {
       toast({
-        title: "Error!.",
-
+        title: "Registration failed",
+        description:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : "Account Already Exists",
         status: "error",
         duration: 5000,
         isClosable: true,
