@@ -15,3 +15,6 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage: storage });
 
 module.exports = upload;
+// "multer": "^1.4.5-lts.1",
+// "multer-gridfs-storage": "^5.0.2",
+// "multer-storage-cloudinary": "^4.0.0",
