@@ -16,8 +16,8 @@ import {
   useToast,
   Spinner,
 } from "@chakra-ui/react";
-import { CiSearch } from "react-icons/Ci";
-import { BsMenuButtonWideFill, BsBellFill } from "react-icons/Bs";
+import { CiSearch } from "react-icons/ci";
+import { BsMenuButtonWideFill, BsBellFill } from "react-icons/bs";
 import { ChatState } from "../../Context/ChatProvider.jsx";
 import Profilemodal from "./ProfileModal.jsx";
 import { useNavigate } from "react-router-dom";

@@ -12,7 +12,7 @@ import {
   ModalCloseButton,
   Button,
 } from "@chakra-ui/react";
-import { GiConvergenceTarget } from "react-icons/Gi";
+import { GiConvergenceTarget } from "react-icons/gi";
 
 const ProfileModal = ({ user, children }) => {
   //this modal for profile component accepts two props user and children

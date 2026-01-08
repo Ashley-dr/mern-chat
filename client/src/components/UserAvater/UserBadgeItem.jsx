@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Box } from "@chakra-ui/react";
 import React from "react";
-import { RiCloseFill } from "react-icons/Ri";
+import { RiCloseFill } from "react-icons/ri";
 const UserBadgeItem = ({ user, handleFunction }) => {
   return (
     <Box
