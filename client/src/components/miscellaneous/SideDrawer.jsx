@@ -35,6 +35,7 @@ import {
 import ChatLoading from "../ChatLoading.jsx";
 import axios from "axios";
 import UserListItem from "../UserAvater/UserListItem.jsx";
+import { BASE_URL } from "../../config/config.js";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -65,7 +66,7 @@ const SideDrawer = () => {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:5000/api/user?search=${search}`,
+        `${BASE_URL}/api/user?search=${search}`,
         config
       );
       setLoading(false);
@@ -93,7 +94,7 @@ const SideDrawer = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/chat",
+        `${BASE_URL}/api/chat`,
         { userId },
         config
       );

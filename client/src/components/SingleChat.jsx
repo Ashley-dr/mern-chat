@@ -19,8 +19,8 @@ import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 import io from "socket.io-client";
 import InputEmoji from "react-input-emoji";
+import { BASE_URL } from "../config/config";
 
-const ENDPOINT = "http://localhost:5000";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -51,7 +51,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       console.log(messages);
       //also in order to fetch message we have to make a HTTP get method to recieve a data from a user
       const { data } = await axios.get(
-        `http://localhost:5000/api/message/${selectedChat._id}`,
+        `${BASE_URL}/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -71,7 +71,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
   useEffect(() => {
     //this is the first useEffect and importante nga e set above first this useEffect because it contains the endpoint of a socket io and to connect it to the server of socket io
-    socket = io(ENDPOINT);
+    socket = io(BASE_URL);
     socket.emit("setup", user);
     socket.on("connection", () => setSocketConnected(true));
   }, []);
@@ -93,7 +93,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/message/",
+        `${BASE_URL}/api/message/`,
         formData,
         config
       );
@@ -125,7 +125,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage(""); // Clear the message after sending
         const { data } = await axios.post(
-          "http://localhost:5000/api/message",
+          `${BASE_URL}/api/message`,
           {
             content: newMessage,
             chatId: selectedChat._id,

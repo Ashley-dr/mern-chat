@@ -14,6 +14,7 @@ import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
+import { BASE_URL } from "../../config/config";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -47,6 +48,8 @@ const Signup = () => {
         isClosable: true,
         position: "top",
       });
+      setLoading(false);
+      return;
     }
     try {
       const config = {
@@ -56,7 +59,7 @@ const Signup = () => {
       };
       //if input register is valid or register success it routes to HTTP post into api user and accomodate the name email and password from registration
       const { data } = await axios.post(
-        "http://localhost:5000/api/user",
+        `${BASE_URL}/api/user`,
         { name, email, password },
         config
       );

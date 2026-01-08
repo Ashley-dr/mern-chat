@@ -13,6 +13,7 @@ import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
+import { BASE_URL } from "../../config/config";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -47,7 +48,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "http://localhost:5000/api/user/login",
+        `${BASE_URL}/api/user/login`,
         { email, password },
         config
       );

@@ -8,7 +8,7 @@ import axios from "axios";
 import ChatLoading from "./ChatLoading";
 import { getSender } from "../config/ChatLogics";
 import GroupChatModal from "./miscellaneous/GroupChatModal";
-
+const BASE_URL = import.meta.env.VITE_API_URL;
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
   const { user, email, selectedChat, setSelectedChat, chats, setChats } =
@@ -22,10 +22,7 @@ const MyChats = ({ fetchAgain }) => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(
-        "http://localhost:5000/api/chat",
-        config
-      );
+      const { data } = await axios.get(`${BASE_URL}/api/chat`, config);
       console.log(data);
       setChats(data);
     } catch (error) {

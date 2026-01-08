@@ -25,6 +25,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import UserBadgeItem from "../UserAvater/UserBadgeItem";
 import axios from "axios";
 import UserListItem from "../UserAvater/UserListItem";
+import { BASE_URL } from "../../config/config";
 const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
   const [groupChatName, setGroupChatName] = useState();
   const [search, setSearch] = useState("");
@@ -65,7 +66,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.put(
-        "http://localhost:5000/api/chat/groupadd",
+        `${BASE_URL}/api/chat/groupadd`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -106,7 +107,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.put(
-        "http://localhost:5000/api/chat/groupremove",
+        `${BASE_URL}/api/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -140,7 +141,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
         },
       };
       const { data } = await axios.put(
-        "http://localhost:5000/api/chat/rename",
+        `${BASE_URL}/api/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -176,7 +177,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/user?search=${search}`,
+        `${BASE_URL}/api/user?search=${search}`,
         config
       );
       console.log(data);

@@ -17,6 +17,7 @@ import { ChatState } from "../../Context/ChatProvider";
 import axios from "axios";
 import UserListItem from "../UserAvater/UserListItem";
 import UserBadgeItem from "../UserAvater/UserBadgeItem";
+import { BASE_URL } from "../../config/config";
 
 const GroupChatModal = ({ children }) => {
   const [groupChatName, setGroupChatName] = useState();
@@ -43,7 +44,7 @@ const GroupChatModal = ({ children }) => {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/user?search=${search}`,
+        `${BASE_URL}/api/user?search=${search}`,
         config
       );
       console.log(data);
@@ -81,7 +82,7 @@ const GroupChatModal = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/chat/group",
+        `${BASE_URL}/api/chat/group`,
         {
           //waiting for a process from being made and for using post method using axios for a request payload includes groupChatname and selectedUsers which would be send in JSON req.body
           name: groupChatName,
