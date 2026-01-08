@@ -11,7 +11,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { AiOutlineArrowLeft } from "react-icons/Ai";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { getSender, getSenderFull } from "../config/ChatLogics";
 import ProfileModal from "./miscellaneous/ProfileModal";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";

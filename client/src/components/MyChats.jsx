@@ -3,7 +3,7 @@
 import { useState, React, useEffect } from "react";
 import { ChatState } from "../Context/ChatProvider";
 import { Box, useToast, Button, Text, Stack, Avatar } from "@chakra-ui/react";
-import { GrAddCircle } from "react-icons/Gr";
+
 import axios from "axios";
 import ChatLoading from "./ChatLoading";
 import { getSender } from "../config/ChatLogics";
@@ -67,9 +67,8 @@ const MyChats = ({ fetchAgain }) => {
           <Button
             display="flex"
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
-            rightIcon={<GrAddCircle />}
           >
-            New Group Chat
+            New Group Chat ⊹
           </Button>
         </GroupChatModal>
       </Box>

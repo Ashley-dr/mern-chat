@@ -10,7 +10,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { AiTwotoneEye } from "react-icons/Ai";
+import { AiTwotoneEye } from "react-icons/ai";
 import {
   Button,
   Modal,

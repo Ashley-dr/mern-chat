@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineEye } from "react-icons/Ai";
+import { AiOutlineEye } from "react-icons/ai";
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -69,7 +69,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data)); //if request is valid it sets the data and recieving it to "data" on what user information entry and the user information will store in a localstorage
       setLoading(false);
-      history.push("/chats");
+      history("/chats");
     } catch (error) {
       toast({
         title: "Registration failed",

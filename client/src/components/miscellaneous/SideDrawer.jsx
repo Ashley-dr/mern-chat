@@ -35,7 +35,6 @@ import {
 import ChatLoading from "../ChatLoading.jsx";
 import axios from "axios";
 import UserListItem from "../UserAvater/UserListItem.jsx";
-import { GrSearchAdvanced } from "react-icons/Gr";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -117,7 +116,7 @@ const SideDrawer = () => {
 
   const logOutHandler = () => {
     localStorage.removeItem("userInfo");
-    history.push("/");
+    history("/");
   };
 
   return (
@@ -177,9 +176,7 @@ const SideDrawer = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <Button onClick={handleSearch}>
-                <GrSearchAdvanced />
-              </Button>
+              <Button onClick={handleSearch}>🔍</Button>
             </Box>
             {loading ? (
               <ChatLoading />
