@@ -12,7 +12,7 @@ import { Button } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/Ai";
 
 const Signup = () => {
@@ -24,7 +24,7 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const toast = useToast();
   const handleClick = () => setShow(!show);
-  const history = useHistory();
+  const history = useNavigate();
 
   const submitHandler = async () => {
     setLoading(true);

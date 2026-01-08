@@ -4,9 +4,9 @@ import { Center, Container, Box, Text, AbsoluteCenter } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import Login from "../components/Authentication/Login";
 import SignUp from "../components/Authentication/Signup";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userInfo"));

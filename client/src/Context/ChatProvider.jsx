@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { React, createContext, useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate } from "react-router-dom";
 const ChatContext = createContext();
 
 const ChatProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [selectedChat, setSelectedChat] = useState();
   const [chats, setChats] = useState([]);
-  const history = useHistory();
+  const history = useNavigate();
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     setUser(userInfo);

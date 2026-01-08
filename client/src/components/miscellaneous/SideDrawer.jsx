@@ -20,7 +20,7 @@ import { CiSearch } from "react-icons/Ci";
 import { BsMenuButtonWideFill, BsBellFill } from "react-icons/Bs";
 import { ChatState } from "../../Context/ChatProvider.jsx";
 import Profilemodal from "./ProfileModal.jsx";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min.js";
+import { useNavigate } from "react-router-dom";
 import { useDisclosure } from "@chakra-ui/hooks";
 import {
   Input,
@@ -44,7 +44,7 @@ const SideDrawer = () => {
   const [loadingChat, setLoadingChat] = useState();
   const { user, email, selectedChat, setSelectedChat, chats, setChats } =
     ChatState();
-  const history = useHistory();
+  const history = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
 
